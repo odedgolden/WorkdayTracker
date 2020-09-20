@@ -15,6 +15,9 @@
 		FC34DE12251794DB00B0E6CB /* WorkdayTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC34DE10251794DB00B0E6CB /* WorkdayTracker.xcdatamodeld */; };
 		FC34DE1D251794DC00B0E6CB /* WorkdayTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34DE1C251794DC00B0E6CB /* WorkdayTrackerTests.swift */; };
 		FC34DE28251794DC00B0E6CB /* WorkdayTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34DE27251794DC00B0E6CB /* WorkdayTrackerUITests.swift */; };
+		FC5EF2E725179CB20068D96C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5EF2E625179CB20068D96C /* SettingsView.swift */; };
+		FC5EF2EC25179CC50068D96C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5EF2EB25179CC50068D96C /* MapView.swift */; };
+		FC5EF2F125179CFC0068D96C /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5EF2F025179CFC0068D96C /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		FC34DE23251794DC00B0E6CB /* WorkdayTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkdayTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC34DE27251794DC00B0E6CB /* WorkdayTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkdayTrackerUITests.swift; sourceTree = "<group>"; };
 		FC34DE29251794DC00B0E6CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC5EF2E625179CB20068D96C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FC5EF2EB25179CC50068D96C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		FC5EF2F025179CFC0068D96C /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				FC34DE05251794D400B0E6CB /* WorkdayTrackerApp.swift */,
-				FC34DE07251794D400B0E6CB /* ContentView.swift */,
+				FC5EF2F82517A49A0068D96C /* View Layer */,
 				FC34DE09251794DB00B0E6CB /* Assets.xcassets */,
 				FC34DE0E251794DB00B0E6CB /* Persistence.swift */,
 				FC34DE13251794DB00B0E6CB /* Info.plist */,
@@ -134,6 +140,17 @@
 				FC34DE29251794DC00B0E6CB /* Info.plist */,
 			);
 			path = WorkdayTrackerUITests;
+			sourceTree = "<group>";
+		};
+		FC5EF2F82517A49A0068D96C /* View Layer */ = {
+			isa = PBXGroup;
+			children = (
+				FC34DE07251794D400B0E6CB /* ContentView.swift */,
+				FC5EF2F025179CFC0068D96C /* ListView.swift */,
+				FC5EF2E625179CB20068D96C /* SettingsView.swift */,
+				FC5EF2EB25179CC50068D96C /* MapView.swift */,
+			);
+			path = "View Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5EF2E725179CB20068D96C /* SettingsView.swift in Sources */,
+				FC5EF2EC25179CC50068D96C /* MapView.swift in Sources */,
 				FC34DE12251794DB00B0E6CB /* WorkdayTracker.xcdatamodeld in Sources */,
+				FC5EF2F125179CFC0068D96C /* ListView.swift in Sources */,
 				FC34DE0F251794DB00B0E6CB /* Persistence.swift in Sources */,
 				FC34DE08251794D400B0E6CB /* ContentView.swift in Sources */,
 				FC34DE06251794D400B0E6CB /* WorkdayTrackerApp.swift in Sources */,

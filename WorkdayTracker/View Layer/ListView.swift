@@ -1,43 +1,43 @@
 //
-//  ContentView.swift
+//  ListView.swift
 //  WorkdayTracker
 //
 //  Created by Oded Golden on 20/09/2020.
 //
 
 import SwiftUI
-import CoreData
 
-struct ContentView: View {
+struct ListView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Day.start, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
-
+    private var days: FetchedResults<Day>
+    
+    
     var body: some View {
+        
         List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+            ForEach(days) { day in
+                Text("Item at \(day.start!, formatter: itemFormatter)")
             }
             .onDelete(perform: deleteItems)
         }
         .toolbar {
-            #if os(iOS)
             EditButton()
-            #endif
-
+            
             Button(action: addItem) {
                 Label("Add Item", systemImage: "plus")
             }
         }
     }
-
+    
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let day = Day(context: viewContext)
+            day.start = Date()
 
             do {
                 try viewContext.save()
@@ -52,7 +52,7 @@ struct ContentView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { days[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
@@ -73,8 +73,9 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
+
+struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ListView()
     }
 }
