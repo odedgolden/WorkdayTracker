@@ -10,9 +10,11 @@ import CoreData
 
 struct ContentView: View {
     
+    @EnvironmentObject var trackerModel: TrackerModel
+    
     var body: some View {
         TabView{
-            ListView().tabItem {
+            DaysView().tabItem {
                 Text("Days")
                 Image(systemName: "list.bullet")
             }
@@ -20,7 +22,11 @@ struct ContentView: View {
                 Text("Settings")
                 Image(systemName: "pencil")
             }
-        }
+            MapView().tabItem {
+                Text("Stats")
+                Image(systemName: "chart.bar")
+            }
+        }.navigationTitle("Settings")
     }
 }
 

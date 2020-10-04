@@ -6,10 +6,30 @@
 //
 
 import SwiftUI
+import CoreLocation
+import MapKit
 
 struct SettingsView: View {
+    
+    @EnvironmentObject var trackerModel: TrackerModel
+    @State private var addressTxt = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10){
+                Spacer()
+                HStack{
+                    Spacer()
+                    Label("Office Address:", systemImage: "building")
+                    Spacer()
+                    TextField("Tel Aviv..", text: $addressTxt)
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
+                        Text("Search")
+                    }
+                    Spacer()
+                }
+                Spacer()
+                Map(coordinateRegion: $trackerModel.coordinateRegion)
+            }
     }
 }
 

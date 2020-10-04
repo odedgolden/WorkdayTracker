@@ -1,5 +1,5 @@
 //
-//  ListView.swift
+//  DaysView.swift
 //  WorkdayTracker
 //
 //  Created by Oded Golden on 20/09/2020.
@@ -7,20 +7,17 @@
 
 import SwiftUI
 
-struct ListView: View {
+struct DaysView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Day.start, ascending: true)],
-        animation: .default)
-    private var days: FetchedResults<Day>
-    
+        animation: .default) private var days: FetchedResults<Day>
     
     var body: some View {
         
         List {
-            ForEach(days) { day in
+            ForEach(days, id: \.self) { day in
                 Text("Item at \(day.start!, formatter: itemFormatter)")
             }
             .onDelete(perform: deleteItems)
@@ -36,17 +33,9 @@ struct ListView: View {
     
     private func addItem() {
         withAnimation {
-            let day = Day(context: viewContext)
-            day.start = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            print("ok")
+            Day.createWith(start: Date(), end: Date(), using: viewContext)
+            print("sup?")
         }
     }
 
@@ -76,6 +65,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        DaysView()
     }
 }
