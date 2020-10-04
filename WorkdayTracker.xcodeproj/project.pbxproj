@@ -17,7 +17,12 @@
 		FC34DE28251794DC00B0E6CB /* WorkdayTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34DE27251794DC00B0E6CB /* WorkdayTrackerUITests.swift */; };
 		FC5EF2E725179CB20068D96C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5EF2E625179CB20068D96C /* SettingsView.swift */; };
 		FC5EF2EC25179CC50068D96C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5EF2EB25179CC50068D96C /* MapView.swift */; };
-		FC5EF2F125179CFC0068D96C /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5EF2F025179CFC0068D96C /* ListView.swift */; };
+		FC5EF2F125179CFC0068D96C /* DaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5EF2F025179CFC0068D96C /* DaysView.swift */; };
+		FC601F1025272139004EE525 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC601F0F25272138004EE525 /* SettingsViewModel.swift */; };
+		FCE135872517BC7A00A724B3 /* TrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE135862517BC7A00A724B3 /* TrackerModel.swift */; };
+		FCE135902517C10300A724B3 /* Day+CoewDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE1358F2517C10300A724B3 /* Day+CoewDataClass.swift */; };
+		FCE135952517C19500A724B3 /* Day+CoreDataPropeties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE135942517C19500A724B3 /* Day+CoreDataPropeties.swift */; };
+		FCE1359E2517C56300A724B3 /* GeoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE1359D2517C56300A724B3 /* GeoManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +59,12 @@
 		FC34DE29251794DC00B0E6CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC5EF2E625179CB20068D96C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FC5EF2EB25179CC50068D96C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		FC5EF2F025179CFC0068D96C /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		FC5EF2F025179CFC0068D96C /* DaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysView.swift; sourceTree = "<group>"; };
+		FC601F0F25272138004EE525 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		FCE135862517BC7A00A724B3 /* TrackerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerModel.swift; sourceTree = "<group>"; };
+		FCE1358F2517C10300A724B3 /* Day+CoewDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day+CoewDataClass.swift"; sourceTree = "<group>"; };
+		FCE135942517C19500A724B3 /* Day+CoreDataPropeties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day+CoreDataPropeties.swift"; sourceTree = "<group>"; };
+		FCE1359D2517C56300A724B3 /* GeoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +117,11 @@
 			children = (
 				FC34DE05251794D400B0E6CB /* WorkdayTrackerApp.swift */,
 				FC5EF2F82517A49A0068D96C /* View Layer */,
-				FC34DE09251794DB00B0E6CB /* Assets.xcassets */,
-				FC34DE0E251794DB00B0E6CB /* Persistence.swift */,
+				FC601F142527213F004EE525 /* View Model Layer */,
+				FCE1358E2517C06500A724B3 /* Model */,
+				FCE1359C2517C52100A724B3 /* Framework Layer */,
 				FC34DE13251794DB00B0E6CB /* Info.plist */,
-				FC34DE10251794DB00B0E6CB /* WorkdayTracker.xcdatamodeld */,
+				FC34DE09251794DB00B0E6CB /* Assets.xcassets */,
 				FC34DE0B251794DB00B0E6CB /* Preview Content */,
 			);
 			path = WorkdayTracker;
@@ -146,11 +157,39 @@
 			isa = PBXGroup;
 			children = (
 				FC34DE07251794D400B0E6CB /* ContentView.swift */,
-				FC5EF2F025179CFC0068D96C /* ListView.swift */,
+				FC5EF2F025179CFC0068D96C /* DaysView.swift */,
 				FC5EF2E625179CB20068D96C /* SettingsView.swift */,
 				FC5EF2EB25179CC50068D96C /* MapView.swift */,
 			);
 			path = "View Layer";
+			sourceTree = "<group>";
+		};
+		FC601F142527213F004EE525 /* View Model Layer */ = {
+			isa = PBXGroup;
+			children = (
+				FC601F0F25272138004EE525 /* SettingsViewModel.swift */,
+			);
+			path = "View Model Layer";
+			sourceTree = "<group>";
+		};
+		FCE1358E2517C06500A724B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC34DE10251794DB00B0E6CB /* WorkdayTracker.xcdatamodeld */,
+				FC34DE0E251794DB00B0E6CB /* Persistence.swift */,
+				FCE135862517BC7A00A724B3 /* TrackerModel.swift */,
+				FCE1358F2517C10300A724B3 /* Day+CoewDataClass.swift */,
+				FCE135942517C19500A724B3 /* Day+CoreDataPropeties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FCE1359C2517C52100A724B3 /* Framework Layer */ = {
+			isa = PBXGroup;
+			children = (
+				FCE1359D2517C56300A724B3 /* GeoManager.swift */,
+			);
+			path = "Framework Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,10 +324,15 @@
 				FC5EF2E725179CB20068D96C /* SettingsView.swift in Sources */,
 				FC5EF2EC25179CC50068D96C /* MapView.swift in Sources */,
 				FC34DE12251794DB00B0E6CB /* WorkdayTracker.xcdatamodeld in Sources */,
-				FC5EF2F125179CFC0068D96C /* ListView.swift in Sources */,
+				FCE1359E2517C56300A724B3 /* GeoManager.swift in Sources */,
+				FCE135952517C19500A724B3 /* Day+CoreDataPropeties.swift in Sources */,
+				FCE135872517BC7A00A724B3 /* TrackerModel.swift in Sources */,
+				FC5EF2F125179CFC0068D96C /* DaysView.swift in Sources */,
+				FCE135902517C10300A724B3 /* Day+CoewDataClass.swift in Sources */,
 				FC34DE0F251794DB00B0E6CB /* Persistence.swift in Sources */,
 				FC34DE08251794D400B0E6CB /* ContentView.swift in Sources */,
 				FC34DE06251794D400B0E6CB /* WorkdayTrackerApp.swift in Sources */,
+				FC601F1025272139004EE525 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
