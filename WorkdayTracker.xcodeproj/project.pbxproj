@@ -116,8 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				FC34DE05251794D400B0E6CB /* WorkdayTrackerApp.swift */,
-				FC5EF2F82517A49A0068D96C /* View Layer */,
-				FC601F142527213F004EE525 /* View Model Layer */,
+				FC5EF2F82517A49A0068D96C /* View */,
+				FC601F142527213F004EE525 /* View Model */,
 				FCE1358E2517C06500A724B3 /* Model */,
 				FCE1359C2517C52100A724B3 /* Framework Layer */,
 				FC34DE13251794DB00B0E6CB /* Info.plist */,
@@ -153,7 +153,7 @@
 			path = WorkdayTrackerUITests;
 			sourceTree = "<group>";
 		};
-		FC5EF2F82517A49A0068D96C /* View Layer */ = {
+		FC5EF2F82517A49A0068D96C /* View */ = {
 			isa = PBXGroup;
 			children = (
 				FC34DE07251794D400B0E6CB /* ContentView.swift */,
@@ -161,15 +161,15 @@
 				FC5EF2E625179CB20068D96C /* SettingsView.swift */,
 				FC5EF2EB25179CC50068D96C /* MapView.swift */,
 			);
-			path = "View Layer";
+			path = View;
 			sourceTree = "<group>";
 		};
-		FC601F142527213F004EE525 /* View Model Layer */ = {
+		FC601F142527213F004EE525 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
 				FC601F0F25272138004EE525 /* SettingsViewModel.swift */,
 			);
-			path = "View Model Layer";
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		FCE1358E2517C06500A724B3 /* Model */ = {
